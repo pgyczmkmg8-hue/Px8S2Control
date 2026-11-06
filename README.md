@@ -1,5 +1,7 @@
 # Px8S2Control
 
+**한국어** | [English](README.en.md)
+
 Bowers & Wilkins **Px8 S2** 헤드폰의 노이즈캔슬링(ANC) 모드를 아이폰에서 버튼 하나로 바꾸는 비공식 iOS 앱이에요.
 B&W Music 앱을 열지 않고 **단축어, 액션 버튼, 제어 센터, 홈 화면 위젯**에서 모드를 바꿀 수 있어요.
 
