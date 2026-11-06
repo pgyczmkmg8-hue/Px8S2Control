@@ -1,0 +1,53 @@
+name: PX8Control
+options:
+  bundleIdPrefix: com.MACHU
+  deploymentTarget:
+    iOS: "18.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""   # TODO: 본인 Team ID
+    CODE_SIGN_STYLE: Automatic
+targets:
+  PX8Control:
+    type: application
+    platform: iOS
+    sources: [App, Shared]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.MACHU.Px8S2Control
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_NAME: Px8S2Control
+    dependencies:
+      - target: PX8Widgets
+    entitlements:
+      path: App/PX8Control.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.MACHU.Px8S2Control]
+    info:
+      path: App/Info.plist
+      properties:
+        UILaunchScreen: {}
+        CFBundleDisplayName: Px8S2Control
+        NSBluetoothAlwaysUsageDescription: 헤드폰의 노이즈캔슬링 모드를 바꾸기 위해 블루투스를 사용합니다.
+        UIBackgroundModes: [bluetooth-central]
+  PX8Widgets:
+    type: app-extension
+    platform: iOS
+    sources: [Widget, Shared]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.MACHU.Px8S2Control.Widgets
+    entitlements:
+      path: Widget/PX8Widgets.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.MACHU.Px8S2Control]
+    info:
+      path: Widget/Info.plist
+      properties:
+        CFBundleDisplayName: PX8 ANC
+        NSBluetoothAlwaysUsageDescription: 헤드폰의 노이즈캔슬링 모드를 바꾸기 위해 블루투스를 사용합니다.
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension

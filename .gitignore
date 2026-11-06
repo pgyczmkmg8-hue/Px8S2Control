@@ -1,0 +1,19 @@
+# XcodeGen이 project.yml에서 만들어 내는 파일
+*.xcodeproj
+App/Info.plist
+Widget/Info.plist
+App/*.entitlements
+Widget/*.entitlements
+
+# 빌드 결과
+build/
+build_ipa/
+DerivedData/
+Payload/
+*.ipa
+*.dSYM
+
+# 기타
+.DS_Store
+xcuserdata/
+*.pklg
